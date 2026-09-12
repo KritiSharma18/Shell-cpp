@@ -1,34 +1,21 @@
-[![progress-banner](https://backend.codecrafters.io/progress/shell/d405587f-6b67-458d-b62c-a09fb4da82c8)](https://app.codecrafters.io/users/kritisharma1807-cyber?r=2qF)
+# Custom Unix Shell (C++)
 
-This is a starting point for C++ solutions to the
-["Build Your Own Shell" Challenge](https://app.codecrafters.io/courses/shell/overview).
+A POSIX-compliant command-line shell built from scratch in C++.
 
-In this challenge, you'll build your own POSIX compliant shell that's capable of
-interpreting shell commands, running external programs and builtin commands like
-cd, pwd, echo and more. Along the way, you'll learn about shell command parsing,
-REPLs, builtin commands, and more.
+## Features
+- Built-in commands: `cd`, `pwd`, `echo`, `type`, `exit`
+- PATH-based executable resolution for running external programs
+- Directory navigation: absolute paths, relative paths, and `~` (home directory)
+- I/O redirection: `>`, `>>`, `2>`, `2>>`
+- Multi-stage pipelines (`cmd1 | cmd2 | cmd3`) supporting both built-ins and external programs
+- Process execution via `fork`/`execv`, with proper parent-child synchronization using `waitpid`
 
-**Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to try the challenge.
-
-# Passing the first stage
-
-The entry point for your `shell` implementation is in `src/main.cpp`. Study and
-uncomment the relevant code, then run the command below to execute the tests on
-our servers:
-
-```sh
-codecrafters submit
+## Build & Run
+```bash
+cmake -B build
+cmake --build build
+./your_program.sh
 ```
 
-Time to move on to the next stage!
-
-# Stage 2 & beyond
-
-Note: This section is for stages 2 and beyond.
-
-1. Ensure you have `cmake` installed locally
-1. Run `./your_program.sh` to run your program, which is implemented in
-   `src/main.cpp`.
-1. Run `codecrafters submit` to submit your solution to CodeCrafters. Test
-   output will be streamed to your terminal.
+## Why I built this
+I wanted to strengthen my systems-programming fundamentals — process management, file descriptors, and OS-level concepts — alongside my existing AI/ML and full-stack project work.
